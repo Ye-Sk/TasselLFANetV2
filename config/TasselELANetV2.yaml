@@ -1,0 +1,42 @@
+# Parameters
+depth_multiple: 1.0  # model depth multiple
+width_multiple: 1.0  # layer channel multiple
+activation: ReLU  # activation (SiLU, GELU, ReLU, Hardswish)
+
+
+#  [from, number, module, args]
+Encoder:
+  [[-1, 1, Conv, [32, 3, 2]],  # 0-P1/2
+   [-1, 1, Conv, [64, 3, 2]],  # 1-P2/4
+
+   [-1, 1, Conv, [32, 1, 1]],
+   [-2, 1, Conv, [32, 1, 1]],
+   [-1, 1, Conv, [32, 3, 1]],
+   [-1, 1, Conv, [32, 3, 1]],
+   [[-1, -2, -3, -4], 1, Concat, [1]],
+   [-1, 1, Conv, [64, 1, 1]],  # 7
+
+   [-1, 1, MP, []],  # 8-P3/8
+   [-1, 1, Conv, [64, 1, 1]],
+   [-2, 1, Conv, [64, 1, 1]],
+   [-1, 1, Conv, [64, 3, 1]],
+   [-1, 1, Conv, [64, 3, 1]],
+   [[-1, -2, -3, -4], 1, Concat, [1]],
+   [-1, 1, Conv, [128, 1, 1]],  # 14
+
+   [-1, 1, MP, []],  # 15-P4/16
+   [-1, 1, Conv, [128, 1, 1]],
+   [-2, 1, Conv, [128, 1, 1]],
+   [-1, 1, Conv, [128, 3, 1]],
+   [-1, 1, Conv, [128, 3, 1]],
+   [[-1, -2, -3, -4], 1, Concat, [1]],
+   [-1, 1, Conv, [256, 1, 1]],  # 21
+   ]
+
+Decoder:
+  [[[7, 14, 21], 1, ASF, [64, 0]],
+   [[7, 14, 21], 1, ASF, [128, 1]],
+   [[7, 14, 21], 1, ASF, [256, 2]],
+
+   [[22, 23, 24], 1, Detector, []],
+  ]
