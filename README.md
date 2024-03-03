@@ -4,7 +4,7 @@
 </p>  
 
 **The resources in this repository are implemented in this paper：**  
-[___TasselLFANetV2: Exploring Vision Models with Domain Adaptation___](https://v.qq.com/x/cover/mpqzavrt4qvdstw/d00148c52qt.html?ptag=360kan.cartoon.free)
+[___TasselLFANetV2: Exploring Vision Models Adaptation in Cross-Domain___](https://v.qq.com/x/cover/mpqzavrt4qvdstw/d00148c52qt.html?ptag=360kan.cartoon.free)
 
 ## Quantitative results
 |Dataset|AP<sub>50</sub>|AP<sub>50-95</sub>|
@@ -78,8 +78,8 @@ $ python infer.py --save-img --source (your source path (file/dir/URL/0(webcam))
 #### If you find this work or code useful for your research, please cite this, Thank you!🤗
 ~~~
 @article{ye2023TasselLFANetV2,  
-  title={TasselLFANetV2: Exploring Vision Models with Domain Adaptation},  
-  author={Yu, Zhenghong and Ye, Jianxiong and Wang, Yangxu and Shengjie Liufu and Lu, Dunlu and Zhou, Huabing}, 
+  title={TasselLFANetV2: Exploring Vision Models Adaptation in Cross-Domain},  
+  author={Ye, Jianxiong and Yu, Zhenghong and Shengjie Liufu and Lu, Dunlu and Zhou, Huabing}, 
   year={2023}
 }
 ~~~
