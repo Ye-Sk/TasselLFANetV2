@@ -84,5 +84,6 @@ $ python infer.py --save-img --source (your source path (file/dir/URL/0(webcam))
   year={2024},
   volume={21},
   pages={1-5},
-  doi={10.1109/LGRS.2024.3382871}}
+  doi={10.1109/LGRS.2024.3382871}
+}
 ~~~
