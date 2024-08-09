@@ -4,7 +4,7 @@
 </p>  
 
 **The resources in this repository are implemented in this paper：**  
-[___TasselLFANetV2: Exploring Vision Models Adaptation in Cross-Domain___](10.1109/LGRS.2024.3382871)
+[___TasselLFANetV2: Exploring Vision Models Adaptation in Cross-Domain___](https://ieeexplore.ieee.org/abstract/document/10483006)
 
 ## Quantitative results
 |Dataset|AP<sub>50</sub>|AP<sub>50-95</sub>|
